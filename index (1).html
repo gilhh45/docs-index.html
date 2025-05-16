@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Center • Acesso de Funcionários</title>
+
+  <!-- Ícones (Font Awesome) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-pM5e4NNe..." crossorigin="anonymous"
+        referrerpolicy="no-referrer"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+  <style>
+    /* --------- reset & base --------- */
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Poppins',Arial,Helvetica,sans-serif;
+      background:linear-gradient(135deg,#5b54ff 0%,#8457ff 30%,#ff6a9f 70%,#ffb86b 100%);
+      min-height:100vh;display:flex;align-items:center;justify-content:center;
+      color:#333; padding:24px;
+    }
+
+    /* --------- cartão principal --------- */
+    .wrapper{
+      width:100%;max-width:960px;height:540px;
+      background:#fff;border-radius:8px;display:flex;overflow:hidden;
+      box-shadow:0 16px 40px rgba(0,0,0,.25);
+    }
+
+    /* --------- painel esquerdo (gradiente) --------- */
+    .info{
+      flex:3;position:relative;color:#fff;padding:64px 56px;
+      background:linear-gradient(135deg,#5351ff 0%,#6a5afd 25%,#fc5c9c 70%,#ff9f70 100%);
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    /* “ornamentos” diagonais tipo freepik — só decoração */
+    .info::before{
+      content:'';position:absolute;inset:0;
+      background:
+        radial-gradient(circle at 20% 90%,#ffb86b40 0 10%,transparent 60%),
+        radial-gradient(circle at 95% 20%,#ffb86b30 0 10%,transparent 60%),
+        linear-gradient(120deg,transparent 0 45%,#ffffff1a 45% 48%,transparent 52% 55%,#ffffff1a 55% 58%,transparent 61% 100%);
+      background-repeat:no-repeat;
+      z-index:0;
+    }
+    .info > *{position:relative;z-index:1}         /* texto acima do decor */
+
+    .info h1{
+      font-size:2.4rem;font-weight:600;margin-bottom:24px;
+    }
+    .info p{
+      font-size:1rem;line-height:1.6;max-width:380px;
+    }
+
+    /* --------- painel direito (login) --------- */
+    .login{
+      flex:2;background:#fff;display:flex;flex-direction:column;
+      justify-content:center;align-items:center;padding:0 48px;
+    }
+    .login h2{
+      font-size:1rem;letter-spacing:2px;font-weight:600;
+      color:#6a5afd;text-transform:uppercase;margin-bottom:32px;
+    }
+
+    .form{
+      width:100%;max-width:260px;
+    }
+
+    .input-group{
+      position:relative;margin-bottom:18px;
+    }
+    .input-group i{
+      position:absolute;top:50%;left:14px;transform:translateY(-50%);
+      color:#9ea0b3;font-size:14px;
+    }
+    .input-group input{
+      width:100%;padding:10px 14px 10px 42px;
+      background:#f1f2ff;border:none;border-radius:50px;
+      font-size:.9rem;color:#333;
+    }
+    .input-group input:focus{outline:none;box-shadow:0 0 0 2px #6a5afd80;background:#fff}
+
+    .extras{
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:.75rem;margin:6px 4px 26px;color:#777;
+    }
+    .extras label{display:flex;align-items:center;cursor:pointer;gap:4px}
+    .extras input[type=checkbox]{accent-color:#6a5afd;width:14px;height:14px}
+    .extras a{color:#999;text-decoration:none;font-style:italic}
+    .extras a:hover{text-decoration:underline}
+
+    .btn{
+      width:100%;border:none;border-radius:50px;padding:12px 0;
+      background:linear-gradient(90deg,#7c62ff,#ff6fa2);
+      color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;
+      transition:filter .25s;
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn:active{filter:brightness(.95)}
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Painel de boas-vindas -->
+    <section class="info">
+      <h1>Bem-vindo(a) ao Pet Center</h1>
+      <p>Portal exclusivo para <strong>funcionários</strong>.  
+         Faça login para gerenciar agendamentos, estoque, grooming e o melhor atendimento aos nossos clientes de quatro patas 🐾.</p>
+    </section>
+
+    <!-- Painel de login -->
+    <section class="login">
+      <h2>ACESSO AO SISTEMA</h2>
+      <form class="form" action="#" method="post">
+        <div class="input-group">
+          <i class="fa-solid fa-paw"></i>
+          <input type="text" name="usuario" placeholder="Usuário" required>
+        </div>
+
+        <div class="input-group">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" name="senha" placeholder="Senha" required>
+        </div>
+
+        <div class="extras">
+          <label><input type="checkbox" name="remember"> lembrar-me</label>
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+
+        <button class="btn" type="submit">ENTRAR</button>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
